@@ -15,7 +15,6 @@ const getHome = asyncHandler( async(req, res) => {
 const postNewArticle = asyncHandler( async(req, res) => {
   // get article details from front end & validation
   const {articleTitle, articleBody, articleTags} = req.body 
-  console.log(req.body, articleTitle, articleBody);
   
   if(articleTitle.trim() === "" || articleBody.trim() === ""){
     throw new ApiError(400, "Title and body are required")
