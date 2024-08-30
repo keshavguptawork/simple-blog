@@ -14,7 +14,7 @@ const getHome = asyncHandler( async(req, res) => {
 })
 const postNewArticle = asyncHandler( async(req, res) => {
   // get article details from front end & validation
-  const {articleTitle, articleBody} = req.body 
+  const {articleTitle, articleBody, articleTags} = req.body 
   console.log(req.body, articleTitle, articleBody);
   
   if(articleTitle.trim() === "" || articleBody.trim() === ""){
@@ -35,7 +35,7 @@ const postNewArticle = asyncHandler( async(req, res) => {
   })
   
   // check for response
-  const newArticle = await Articlec.findById(article._id)
+  const newArticle = await Article.findById(article._id)
   if(!newArticle){
     throw new ApiError(500, "Something went wrong while posting the article")
   }
