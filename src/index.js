@@ -24,7 +24,7 @@ connectDB() // returns a promise as we have written a async function
   })
   .then(() => {
     app.on("error", (error) => {
-      console.log("Express error: ", error);
+      console.log(">>> Express error: ", error);
       throw error
     })
   })

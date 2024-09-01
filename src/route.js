@@ -3,7 +3,7 @@ import {
   getHome,
   postNewArticle, 
   deleteArticle, 
-  getArticle, 
+  getAllArticles, 
   getArticleById, 
   updateArticle,  
 } from "./controller.js";
@@ -15,7 +15,7 @@ const router = Router()
 router.route("/").get(getHome) 
 router.route("/new").post(postNewArticle) 
 router.route("/delete-article").delete(deleteArticle)
-router.route("/article").get(getArticle)
+router.route("/articles").get(getAllArticles)
 router.route("/article-by-id").get(getArticleById) 
 router.route("/update-article").patch(updateArticle) 
 
