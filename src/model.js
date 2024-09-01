@@ -1,19 +1,19 @@
 import mongoose, { model, Schema } from "mongoose";
 
-const articleSchema = new Schema({
-  articleTitle: {
+const blogSchema = new Schema({
+  blogTitle: {
     type: String, 
     required: true
   },
-  articleBody: {
+  blogBody: {
     type: String, 
     required: true
   },
-  articleTags: [{
+  blogTags: [{
     type: String, 
     required: false
   }],
 }, {timestamps: true})
 
 
-export const Article = model("Article", articleSchema)
+export const Blog = model("Blog", blogSchema)

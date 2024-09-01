@@ -1,11 +1,11 @@
 import { Router } from "express";
 import { 
   getHome,
-  postNewArticle, 
-  deleteArticle, 
-  getAllArticles, 
-  getArticleById, 
-  updateArticle,  
+  postNewBlog, 
+  deleteBlog, 
+  getAllBlogs, 
+  getBlogById, 
+  updateBlog,  
 } from "./controller.js";
 
 const router = Router()
@@ -13,10 +13,10 @@ const router = Router()
 // http://localhost:3001/api/v1/
 
 router.route("/").get(getHome) 
-router.route("/new").post(postNewArticle) 
-router.route("/delete-article").delete(deleteArticle)
-router.route("/articles").get(getAllArticles)
-router.route("/article-by-id").get(getArticleById) 
-router.route("/update-article").patch(updateArticle) 
+router.route("/new").post(postNewBlog) 
+router.route("/delete-blog").delete(deleteBlog)
+router.route("/blogs").get(getAllBlogs)
+router.route("/blog-by-id").get(getBlogById) 
+router.route("/update-blog").patch(updateBlog) 
 
 export default router
