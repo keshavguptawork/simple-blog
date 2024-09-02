@@ -5,13 +5,13 @@ import connectDB from "./db.js";
 import userRoute from "./route.js"
 
 const app = express()
-
-dotenv.config({path: '../.env'})
+const envFilePath = '../.env' 
+dotenv.config({path: envFilePath})
 
 app.use(cors({ origin: process.env.CORS_ORIGIN, Credential: true }))
 app.use(express.json({limit: "16kb"})) // limiting json input to only 16kb
 app.use(express.urlencoded({extended: true, limit: "16kb"})) // to receive url and encode them
-app.use(express.static("public")) // declaring a public asset directory 
+app.use(express.static("../public")) // declaring a public asset directory 
 
 // routes declaration
 app.use("/api/v1/", userRoute)
